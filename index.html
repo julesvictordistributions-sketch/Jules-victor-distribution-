@@ -15,13 +15,13 @@
   .rating{margin-top:15px;color:#D4AF37;font-size:16px}
   .stars{color:#D4AF37;font-size:20px}
   
+  .compteur{background:#111;padding:40px 20px;text-align:center;border-top:1px solid #D4AF37;border-bottom:1px solid #D4AF37}
+  .compteur h3{color:#D4AF37;font-size:36px;margin-bottom:10px}
+  .compteur p{color:#ccc;font-size:18px}
+  
   .hero{padding:80px 20px;text-align:center}
   .hero h2{font-size:34px;margin-bottom:20px}
   .hero p{color:#ccc;max-width:750px;margin:0 auto;font-size:18px}
-  
-  .logos{background:#111;padding:40px 20px;border-top:1px solid #222;border-bottom:1px solid #222;text-align:center}
-  .logos p{color:#aaa;margin-bottom:20px;font-size:14px;letter-spacing:1px}
-  .logo-grid{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;color:#666;font-weight:bold}
   
   .trust{background:#111;padding:70px 20px}
   .trust h2{text-align:center;color:#D4AF37;font-size:32px;margin-bottom:30px}
@@ -70,8 +70,9 @@
   .card:hover{border-color:#D4AF37;transform:translateY(-8px)}
   .badge{position:absolute;top:-12px;right:20px;background:#D4AF37;color:#000;padding:5px 15px;border-radius:20px;font-size:12px;font-weight:bold}
   .card h3{font-size:24px;margin-bottom:15px}
-  .photos{display:flex;gap:10px;margin-bottom:15px}
-  .photo{width:100%;height:160px;border-radius:8px;border:1px solid #333;object-fit:cover}
+  .photos{display:flex;gap:10px;margin-bottom:15px;flex-wrap:wrap}
+  .photo{width:calc(50% - 5px);height:160px;border-radius:8px;border:1px solid #333;object-fit:cover;background:#222}
+  @media(max-width:768px){.photo{width:100%}}
   .card ul{list-style:none;margin:20px 0;color:#aaa}
   .card ul li{margin:10px 0;padding-left:20px;position:relative}
   .card ul li:before{content:"✓";color:#D4AF37;position:absolute;left:0;font-weight:bold}
@@ -103,23 +104,17 @@
   </div>
 </header>
 
+<section class="compteur">
+  <div class="container">
+    <h3>+89 Distributeurs Déjà Installés</h3>
+    <p>Ils nous ont fait confiance pour développer leur activité</p>
+  </div>
+</section>
+
 <section class="hero">
   <div class="container">
     <h2>Distributeurs + Formations Premium</h2>
     <p>On s'occupe de tout. Des machines livrées chez vous, jusqu'aux guides pour réussir. Simple, clair, et sécurisé.</p>
-  </div>
-</section>
-
-<section class="logos">
-  <div class="container">
-    <p>ILS NOUS FONT CONFIANCE</p>
-    <div class="logo-grid">
-      <span>Entreprises</span>
-      <span>Écoles</span>
-      <span>Salles de Sport</span>
-      <span>Bureaux</span>
-      <span>Gares</span>
-    </div>
   </div>
 </section>
 
@@ -169,40 +164,17 @@
         <p class="testi-author">Marc D.</p>
         <p class="testi-job">Gérant de salle de sport</p>
       </div>
-      
       <div class="testi">
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-stars">★★★</div>
         <p class="testi-text">J'ai pris l'ebook "Emplacements en Or". En 3 semaines j'ai signé 2 contrats. Le contenu est concret et ça marche vraiment.</p>
         <p class="testi-author">Sophie L.</p>
         <p class="testi-job">Investisseuse</p>
       </div>
-      
       <div class="testi">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">Service pro du début à la fin. Le SIRET affiché m'a rassuré. Maintenance incluse donc zéro stress pour moi.</p>
         <p class="testi-author">Thomas R.</p>
         <p class="testi-job">Responsable entreprise</p>
-      </div>
-      
-      <div class="testi">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Pack Combo Premium = rentabilité atteinte en 4 mois. L'accompagnement est sérieux. Je recommande à 100%.</p>
-        <p class="testi-author">Laura M.</p>
-        <p class="testi-job">Gérante de boutique</p>
-      </div>
-      
-      <div class="testi">
-        <div class="testi-stars">★★★★☆</div>
-        <p class="testi-text">Premier distributeur pour moi. Ils m'ont tout expliqué simplement. Pas de jargon, juste des actions claires.</p>
-        <p class="testi-author">Kevin P.</p>
-        <p class="testi-job">Auto-entrepreneur</p>
-      </div>
-      
-      <div class="testi">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Le support répond vraiment vite. Panne résolue en 24h. Pour une société enregistrée avec SIRET, on se sent en sécurité.</p>
-        <p class="testi-author">Isabelle V.</p>
-        <p class="testi-job">Directrice d'école</p>
       </div>
     </div>
   </div>
@@ -214,7 +186,7 @@
     <p>3 ebooks concrets pour démarrer sereinement et rentabiliser vite.</p>
     <div class="ebook-grid">
       <div class="ebook">
-        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=400&auto=format&fit=crop" class="ebook-img" alt="Ebook 3D Guide Démarrage">
+        <img src="https://via.placeholder.com/400x220/D4AF37/000?text=Guide+Demarrage+3D" class="ebook-img" alt="Ebook 3D Guide Démarrage">
         <div class="ebook-content">
           <h3>"0 à 1er Distributeur en 30 Jours"</h3>
           <p>Le plan étape par étape. Choisir la bonne machine, négocier l'emplacement, éviter les erreurs coûteuses. + Liste de 20 fournisseurs fiables.</p>
@@ -222,9 +194,8 @@
           <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Ebook 1 - 20€" class="btn">Recevoir par Email</a>
         </div>
       </div>
-      
       <div class="ebook">
-        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=400&auto=format&fit=crop" class="ebook-img" alt="Ebook 3D Emplacements">
+        <img src="https://via.placeholder.com/400x220/D4AF37/000000?text=Emplacements+3D" class="ebook-img" alt="Ebook 3D Emplacements">
         <div class="ebook-content">
           <h3>"Les 15 Emplacements en Or"</h3>
           <p>La méthode pour trouver les meilleurs lieux. Scripts, contrat type, calcul de rentabilité. Découvrez les 3 endroits qui rapportent le plus.</p>
@@ -232,9 +203,8 @@
           <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Ebook 2 - 30€" class="btn">Recevoir par Email</a>
         </div>
       </div>
-      
       <div class="ebook">
-        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop" class="ebook-img" alt="Ebook 3D Maintenance">
+        <img src="https://via.placeholder.com/400x220/D4AF37/000000?text=Maintenance+3D" class="ebook-img" alt="Ebook 3D Maintenance">
         <div class="ebook-content">
           <h3>"Maintenance Pro + Dépannage Express"</h3>
           <p>Résolvez 90% des pannes en 15 min. Schémas, codes erreur, pièces essentielles. Économisez sur la maintenance dès la 1ère année.</p>
@@ -255,8 +225,8 @@
         <div class="livraison">LIVRAISON INCLUSE</div>
         <h3>Snacks Essentiel</h3>
         <div class="photos">
-          <img src="https://images.unsplash.com/photo-1625943553852-781c5c0a5a7b?q=80&w=400" class="photo" alt="Distributeur Snacks">
-          <img src="https://images.unsplash.com/photo-1625943553852-781c5c0a5a7b?q=80&w=400&crop=2" class="photo" alt="Distributeur Snacks 2">
+          <img src="https://i.imgur.com/An8UZKG.jpg" class="photo" alt="Distributeur Snacks">
+          <img src="https://i.imgur.com/An-4o16.jpg" class="photo" alt="Distributeur Snacks 2">
         </div>
         <ul>
           <li>Paiement CB + Espèces inclus</li>
@@ -272,8 +242,8 @@
         <div class="livraison">LIVRAISON INCLUSE</div>
         <h3>Boissons Pro</h3>
         <div class="photos">
-          <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=400" class="photo" alt="Distributeur Boissons">
-          <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=400&crop=2" class="photo" alt="Distributeur Boissons 2">
+          <img src="https://i.imgur.com/An8aShT.jpg" class="photo" alt="Distributeur Boissons">
+          <img src="https://i.imgur.com/An8UZKG.jpg" class="photo" alt="Distributeur Boissons 2">
         </div>
         <ul>
           <li>Paiement CB + Mobile Money inclus</li>
@@ -288,8 +258,8 @@
         <div class="livraison">LIVRAISON INCLUSE</div>
         <h3>Pack Combo Premium</h3>
         <div class="photos">
-          <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=400" class="photo" alt="Distributeur Combo">
-          <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=400&crop=2" class="photo" alt="Distributeur Combo 2">
+          <img src="https://i.imgur.com/An-4o16.jpg" class="photo" alt="Distributeur Combo">
+          <img src="https://i.imgur.com/An8aShT.jpg" class="photo" alt="Distributeur Combo 2">
         </div>
         <ul>
           <li>Tous modes de paiement inclus</li>
