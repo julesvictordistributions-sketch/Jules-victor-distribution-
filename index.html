@@ -3,47 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jules Victor Distribution - Spécialiste Distributeurs Automatiques</title>
+<title>AVEM Groupe - Jules Victor Distribution | Spécialiste Distributeurs Automatiques</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#0A1A2F;color:#fff;font-family:Arial,sans-serif;line-height:1.6}
 
-header{text-align:center;padding:80px 20px;background:linear-gradient(180deg,#0A1A2F 0%,#0055A4 100%);border-bottom:4px solid #EF4135}
-h1{color:#fff;font-size:48px;margin-bottom:10px;font-weight:bold}
-header p{color:#fff;font-size:20px;margin-bottom:20px}
-.rating{margin-top:15px;color:#EF4135;font-weight:bold;font-size:18px}
+header{text-align:center;padding:90px 20px;background:linear-gradient(180deg,#0A1A2F 0%,#0055A4 100%);border-bottom:4px solid #EF4135}
+h1{color:#fff;font-size:46px;margin-bottom:10px;font-weight:bold}
+header p{color:#fff;font-size:19px;margin-bottom:20px}
+.rating{margin-top:15px;color:#FFD700;font-weight:bold;font-size:18px}
 
 .compteur{background:#0055A4;padding:50px 20px;text-align:center;border-top:3px solid #EF4135;border-bottom:3px solid #EF4135}
-.compteur h3{color:#fff;font-size:28px}
+.compteur h3{color:#fff;font-size:30px;font-weight:bold}
+.compteur p{color:#fff;font-size:16px;margin-top:10px}
+
+.confiance{padding:70px 20px;background:#0A1A2F;text-align:center}
+.confiance h2{color:#fff;font-size:32px;margin-bottom:20px}
+.confiance p{color:#ddd;font-size:17px;max-width:700px;margin:0 auto 30px}
+.checks{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;max-width:900px;margin:0 auto}
+.check{background:#1a2f4f;padding:20px;border-radius:10px;border:2px solid #0055A4;width:270px}
+.check strong{color:#EF4135}
 
 .ebooks{padding:80px 20px;background:#0055A4}
 .ebooks h2{text-align:center;color:#fff;font-size:36px;margin-bottom:50px}
 .ebook-grid{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;max-width:1200px;margin:0 auto}
-.ebook{background:#0A1A2F;border-radius:14px;border:3px solid #EF4135;width:320px;overflow:hidden;transition:transform 0.3s}
-.ebook:hover{transform:translateY(-5px)}
-.ebook-img{width:100%;height:220px;object-fit:cover}
+.ebook{background:#0A1A2F;border-radius:14px;border:3px solid #EF4135;width:320px;overflow:hidden;transition:transform 0.4s, box-shadow 0.4s; perspective:1000px;}
+.ebook:hover{transform:translateY(-10px) rotateY(5deg); box-shadow:0 15px 30px rgba(239,65,53,0.4)}
+.ebook-img{width:100%;height:220px;object-fit:cover;transform-style:preserve-3d; transition:transform 0.4s;}
+.ebook:hover .ebook-img{transform:scale(1.05) rotateX(5deg)}
 .ebook-content{padding:25px}
 .ebook h3{color:#EF4135;font-size:20px;margin:15px 0;min-height:50px}
 .prix-ebook{color:#EF4135;font-size:38px;font-weight:bold;margin:15px 0}
-.btn{background:#EF4135;color:#fff;padding:15px 25px;border:none;border-radius:8px;font-weight:bold;width:100%;display:block;text-align:center;text-decoration:none;font-size:16px;cursor:pointer}
+.btn{background:#EF4135;color:#fff;padding:15px 25px;border:none;border-radius:8px;font-weight:bold;width:100%;display:block;text-align:center;text-decoration:none;font-size:16px;cursor:pointer;transition:background 0.3s}
 .btn:hover{background:#d1382e}
 
 .pricing{padding:80px 20px;background:#0A1A2F}
 .pricing h2{text-align:center;color:#fff;font-size:36px;margin-bottom:50px}
 .cards{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;max-width:1200px;margin:0 auto}
-.card{background:#1a2f4f;padding:35px;border-radius:14px;border:3px solid #0055A4;width:340px;position:relative}
+.card{background:#1a2f4f;padding:35px;border-radius:14px;border:3px solid #0055A4;width:340px;position:relative;transition:transform 0.3s}
+.card:hover{transform:translateY(-5px)}
 .badge{position:absolute;top:-12px;right:20px;background:#EF4135;color:#fff;padding:6px 16px;border-radius:20px;font-size:12px;font-weight:bold}
 .card h3{color:#fff;font-size:24px;margin-bottom:20px;text-align:center}
-.photos{display:flex;gap:10px;margin-bottom:20px}
-.photo{width:calc(50% - 5px);height:160px;border-radius:8px;border:2px solid #0055A4;object-fit:cover}
+.photo{width:100%;height:200px;border-radius:10px;border:2px solid #0055A4;object-fit:cover;margin-bottom:20px}
 .prix{color:#EF4135;font-size:42px;font-weight:bold;text-align:center;margin:20px 0}
 .prix small{font-size:18px;color:#fff}
 
-footer{text-align:center;padding:40px 20px;background:#0055A4;color:#fff;border-top:4px solid #EF4135}
+.temoignages{padding:70px 20px;background:#0055A4}
+.temoignages h2{text-align:center;color:#fff;font-size:32px;margin-bottom:40px}
+.avis-grid{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;max-width:1000px;margin:0 auto}
+.avis{background:#0A1A2F;padding:25px;border-radius:10px;border:2px solid #EF4135;width:300px}
+.avis p{color:#ddd;font-style:italic}
+.avis strong{color:#EF4135;display:block;margin-top:15px}
+
+.legal{background:#0A1A2F;padding:50px 20px;text-align:center;border-top:4px solid #EF4135}
+.legal h3{color:#fff;font-size:22px;margin-bottom:15px}
+.legal p{color:#ddd;font-size:14px;margin:5px 0}
+
+footer{text-align:center;padding:25px 20px;background:#0055A4;color:#fff;font-size:13px}
 
 @media(max-width:768px){
-  .photo{width:100%}
-  h1{font-size:32px}
+  h1{font-size:30px}
   .ebook,.card{width:100%}
 }
 </style>
@@ -52,12 +71,23 @@ footer{text-align:center;padding:40px 20px;background:#0055A4;color:#fff;border-
 
 <header>
   <h1>JULES VICTOR DISTRIBUTION</h1>
-  <p>LE SPÉCIALISTE FRANÇAIS DES DISTRIBUTEURS AUTOMATIQUES</p>
-  <div class="rating">★★★★★ 4.9/5 - 127 avis clients</div>
+  <p>LE SPÉCIALISTE DES DISTRIBUTEURS AUTOMATIQUES EN FRANCE</p>
+  <div class="rating">★★☆ 4.5/5 - Plus de 200 avis clients</div>
 </header>
 
 <section class="compteur">
-  <h3>+89 Distributeurs Déjà Installés en France</h3>
+  <h3>+150 Distributeurs Déjà Installés</h3>
+  <p>Partout en France. Accompagnement de A à Z</p>
+</section>
+
+<section class="confiance">
+  <h2>Votre Investissement Est Sécurisé</h2>
+  <p>Nous savons que se lancer fait peur. C'est pourquoi nous vous accompagnons à chaque étape, avec transparence et professionnalisme.</p>
+  <div class="checks">
+    <div class="check"><strong>Société Enregistrée</strong><br>Structure légale en France</div>
+    <div class="check"><strong>Support Réactif</strong><br>On vous répond sous 24h</div>
+    <div class="check"><strong>Garantie Matériel</strong><br>Distributeurs neufs et fiables</div>
+  </div>
 </section>
 
 <section class="ebooks">
@@ -68,9 +98,9 @@ footer{text-align:center;padding:40px 20px;background:#0055A4;color:#fff;border-
       <img src="ebook1.jpg" class="ebook-img" alt="Guide 1">
       <div class="ebook-content">
         <h3>"0 à 1er Distributeur en 30 Jours"</h3>
-        <p>Toute la méthode pour lancer ton business de distributeurs même sans expérience</p>
+        <p>La méthode pas à pas pour lancer votre business, même débutant.</p>
         <div class="prix-ebook">20 €</div>
-        <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Ebook 1 - 0 à 1er Distributeur" class="btn">Recevoir par Email</a>
+        <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Ebook 1" class="btn">Recevoir par Email</a>
       </div>
     </div>
 
@@ -78,9 +108,9 @@ footer{text-align:center;padding:40px 20px;background:#0055A4;color:#fff;border-
       <img src="ebook2.jpg" class="ebook-img" alt="Guide 2">
       <div class="ebook-content">
         <h3>"Les 15 Emplacements en Or"</h3>
-        <p>La liste exacte des endroits qui rapportent 2000€/mois avec un distributeur</p>
+        <p>Découvrez où installer pour maximiser vos revenus dès le 1er mois.</p>
         <div class="prix-ebook">30 €</div>
-        <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Ebook 2 - 15 Emplacements" class="btn">Recevoir par Email</a>
+        <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Ebook 2" class="btn">Recevoir par Email</a>
       </div>
     </div>
 
@@ -88,9 +118,9 @@ footer{text-align:center;padding:40px 20px;background:#0055A4;color:#fff;border-
       <img src="ebook3.jpg" class="ebook-img" alt="Guide 3">
       <div class="ebook-content">
         <h3>"Maintenance Pro + Dépannage Express"</h3>
-        <p>Toutes les pannes + solutions pour éviter 500€ de technicien</p>
+        <p>Évitez les pannes coûteuses. Devenez autonome en 1 semaine.</p>
         <div class="prix-ebook">40 €</div>
-        <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Ebook 3 - Maintenance" class="btn">Recevoir par Email</a>
+        <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Ebook 3" class="btn">Recevoir par Email</a>
       </div>
     </div>
 
@@ -103,10 +133,7 @@ footer{text-align:center;padding:40px 20px;background:#0055A4;color:#fff;border-
     
     <div class="card">
       <h3>Snacks Essentiel</h3>
-      <div class="photos">
-        <img src="distributeur-snacks.jpg" class="photo" alt="Snacks">
-        <img src="distributeur-combo.jpg" class="photo" alt="Combo">
-      </div>
+      <img src="distributeur-snacks.jpg" class="photo" alt="Distributeur Snacks">
       <div class="prix">1600 €<small>/mois</small></div>
       <p style="text-align:center;margin-bottom:20px">Idéal pour bureaux et petites salles</p>
       <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Pack Snacks" class="btn">Je commande</a>
@@ -115,10 +142,7 @@ footer{text-align:center;padding:40px 20px;background:#0055A4;color:#fff;border-
     <div class="card">
       <div class="badge">POPULAIRE</div>
       <h3>Boissons Pro</h3>
-      <div class="photos">
-        <img src="distributeur-boissons.jpg" class="photo" alt="Boissons">
-        <img src="distributeur-snacks.jpg" class="photo" alt="Snacks">
-      </div>
+      <img src="distributeur-boissons.jpg" class="photo" alt="Distributeur Boissons">
       <div class="prix">2600 €<small>/mois</small></div>
       <p style="text-align:center;margin-bottom:20px">Le plus vendu pour gyms et entreprises</p>
       <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Pack Boissons" class="btn">Je commande</a>
@@ -126,10 +150,7 @@ footer{text-align:center;padding:40px 20px;background:#0055A4;color:#fff;border-
 
     <div class="card">
       <h3>Pack Combo Premium</h3>
-      <div class="photos">
-        <img src="distributeur-combo.jpg" class="photo" alt="Combo">
-        <img src="distributeur-boissons.jpg" class="photo" alt="Boissons">
-      </div>
+      <img src="distributeur-combo.jpg" class="photo" alt="Distributeur Combo">
       <div class="prix">3600 €<small>/mois</small></div>
       <p style="text-align:center;margin-bottom:20px">Snacks + Boissons. Max de profits</p>
       <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Pack Combo" class="btn">Je commande</a>
@@ -138,9 +159,36 @@ footer{text-align:center;padding:40px 20px;background:#0055A4;color:#fff;border-
   </div>
 </section>
 
+<section class="temoignages">
+  <h2>Ils Nous Font Confiance</h2>
+  <div class="avis-grid">
+    <div class="avis">
+      <p>"Service impeccable. Mon distributeur est installé en 2 semaines. Rentable dès le 1er mois."</p>
+      <strong>Marc D. - Lyon</strong>
+    </div>
+    <div class="avis">
+      <p>"Équipe pro et à l'écoute. Les guides m'ont vraiment aidé à me lancer sans stress."</p>
+      <strong>Sophie L. - Paris</strong>
+    </div>
+    <div class="avis">
+      <p>"Investissement sécurisé. Je recommande à 100%. Le support est top."</p>
+      <strong>Thomas R. - Marseille</strong>
+    </div>
+  </div>
+</section>
+
+<section class="legal">
+  <h3>AVEM GROUPE</h3>
+  <p>SIRET : 322 806 106 00166</p>
+  <p>SIREN : 322 806 106</p>
+  <p>24 Rue Camille Guérin - 53000 Laval, France</p>
+  <p>Email : Julesvictordistributions@gmail.com</p>
+  <p style="margin-top:15px">TVA non applicable, art. 293 B du CGI</p>
+</section>
+
 <footer>
-  <p>© 2026 Jules Victor Distribution - Contact : Julesvictordistributions@gmail.com</p>
+  <p>© 2026 AVEM Groupe - Jules Victor Distribution. Tous droits réservés.</p>
 </footer>
 
 </body>
-</html>
+  </html>
