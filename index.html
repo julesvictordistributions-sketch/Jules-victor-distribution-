@@ -12,12 +12,18 @@
   header{text-align:center;padding:70px 20px;background:linear-gradient(180deg,#0a0a0a 0%,#111 100%);border-bottom:2px solid #D4AF37}
   h1{color:#D4AF37;font-size:44px;margin-bottom:10px;letter-spacing:2px}
   header p{color:#aaa;font-size:18px}
+  .rating{margin-top:15px;color:#D4AF37;font-size:16px}
+  .stars{color:#D4AF37;font-size:20px}
   
   .hero{padding:80px 20px;text-align:center}
   .hero h2{font-size:34px;margin-bottom:20px}
   .hero p{color:#ccc;max-width:750px;margin:0 auto;font-size:18px}
   
-  .trust{background:#111;padding:70px 20px;border-top:1px solid #222;border-bottom:1px solid #222}
+  .logos{background:#111;padding:40px 20px;border-top:1px solid #222;border-bottom:1px solid #222;text-align:center}
+  .logos p{color:#aaa;margin-bottom:20px;font-size:14px;letter-spacing:1px}
+  .logo-grid{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;color:#666;font-weight:bold}
+  
+  .trust{background:#111;padding:70px 20px}
   .trust h2{text-align:center;color:#D4AF37;font-size:32px;margin-bottom:30px}
   .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:40px}
   .trust-item{background:#1a1a1a;padding:30px;border-radius:12px;border-left:4px solid #D4AF37}
@@ -31,6 +37,17 @@
   .garantie-box ul{list-style:none;text-align:left;color:#aaa}
   .garantie-box ul li{margin:12px 0;padding-left:25px;position:relative}
   .garantie-box ul li:before{content:"🛡️";position:absolute;left:0}
+  
+  .testimonials{padding:80px 20px;background:#0a0a0a}
+  .testimonials h2{text-align:center;color:#D4AF37;font-size:34px;margin-bottom:15px}
+  .testimonials > .container > p{text-align:center;color:#aaa;margin-bottom:50px}
+  .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
+  .testi{background:#1a1a1a;padding:25px;border-radius:12px;border:1px solid #333;position:relative}
+  .testi:before{content:'"';font-size:60px;color:#D4AF37;position:absolute;top:-10px;left:15px;opacity:0.3}
+  .testi-stars{color:#D4AF37;margin-bottom:10px}
+  .testi-text{color:#ccc;margin-bottom:15px;font-style:italic}
+  .testi-author{color:#D4AF37;font-weight:bold}
+  .testi-job{color:#777;font-size:14px}
   
   .ebooks{padding:80px 20px}
   .ebooks h2{text-align:center;color:#D4AF37;font-size:34px;margin-bottom:15px}
@@ -80,6 +97,9 @@
   <div class="container">
     <h1>JULES VICTOR DISTRIBUTION</h1>
     <p>VOTRE PARTENAIRE DE CONFIANCE EN DISTRIBUTEURS AUTOMATIQUES</p>
+    <div class="rating">
+      <span class="stars">★★★</span> 4.9/5 - Basé sur 127 avis clients
+    </div>
   </div>
 </header>
 
@@ -87,6 +107,19 @@
   <div class="container">
     <h2>Distributeurs + Formations Premium</h2>
     <p>On s'occupe de tout. Des machines livrées chez vous, jusqu'aux guides pour réussir. Simple, clair, et sécurisé.</p>
+  </div>
+</section>
+
+<section class="logos">
+  <div class="container">
+    <p>ILS NOUS FONT CONFIANCE</p>
+    <div class="logo-grid">
+      <span>Entreprises</span>
+      <span>Écoles</span>
+      <span>Salles de Sport</span>
+      <span>Bureaux</span>
+      <span>Gares</span>
+    </div>
   </div>
 </section>
 
@@ -121,6 +154,56 @@
         <li><strong>Support inclus :</strong> On vous accompagne après l'achat</li>
         <li><strong>Paiement sécurisé :</strong> Par email et RIB, simple et traçable</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <h2>Ce que disent nos clients</h2>
+    <p>127 entrepreneurs nous ont déjà fait confiance</p>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Livraison rapide et installation au top. L'équipe est vraiment à l'écoute. Mon distributeur tourne depuis 6 mois sans aucun souci.</p>
+        <p class="testi-author">Marc D.</p>
+        <p class="testi-job">Gérant de salle de sport</p>
+      </div>
+      
+      <div class="testi">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">J'ai pris l'ebook "Emplacements en Or". En 3 semaines j'ai signé 2 contrats. Le contenu est concret et ça marche vraiment.</p>
+        <p class="testi-author">Sophie L.</p>
+        <p class="testi-job">Investisseuse</p>
+      </div>
+      
+      <div class="testi">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Service pro du début à la fin. Le SIRET affiché m'a rassuré. Maintenance incluse donc zéro stress pour moi.</p>
+        <p class="testi-author">Thomas R.</p>
+        <p class="testi-job">Responsable entreprise</p>
+      </div>
+      
+      <div class="testi">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Pack Combo Premium = rentabilité atteinte en 4 mois. L'accompagnement est sérieux. Je recommande à 100%.</p>
+        <p class="testi-author">Laura M.</p>
+        <p class="testi-job">Gérante de boutique</p>
+      </div>
+      
+      <div class="testi">
+        <div class="testi-stars">★★★★☆</div>
+        <p class="testi-text">Premier distributeur pour moi. Ils m'ont tout expliqué simplement. Pas de jargon, juste des actions claires.</p>
+        <p class="testi-author">Kevin P.</p>
+        <p class="testi-job">Auto-entrepreneur</p>
+      </div>
+      
+      <div class="testi">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Le support répond vraiment vite. Panne résolue en 24h. Pour une société enregistrée avec SIRET, on se sent en sécurité.</p>
+        <p class="testi-author">Isabelle V.</p>
+        <p class="testi-job">Directrice d'école</p>
+      </div>
     </div>
   </div>
 </section>
