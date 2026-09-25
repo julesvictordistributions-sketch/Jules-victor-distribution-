@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Votre Banque | Prototype</title>
+<title>VOTRE BANK | Maquette</title>
 
 <style>
 *{
@@ -13,13 +14,15 @@
 }
 
 :root{
-  --bg:#07111f;
-  --panel:#0d1b2e;
-  --panel2:#101f34;
-  --gold:#d8ad55;
-  --gold2:#f0cc7a;
-  --text:#f5f5f5;
-  --muted:#8e9aaa;
+  --bg:#050a14;
+  --panel:#0a1526;
+  --panel2:#0d1c33;
+  --silver:#c9d2dc;
+  --silver2:#eef2f6;
+  --blue:#2e6ff2;
+  --blue2:#4fa3ff;
+  --text:#f2f4f7;
+  --muted:#8a96a8;
   --border:rgba(255,255,255,.09);
   --green:#43d19e;
   --red:#ff7272;
@@ -32,8 +35,8 @@ html{
 body{
   font-family:Arial,Helvetica,sans-serif;
   background:
-    radial-gradient(circle at 80% 10%,rgba(216,173,85,.10),transparent 30%),
-    radial-gradient(circle at 10% 80%,rgba(20,90,150,.12),transparent 35%),
+    radial-gradient(circle at 85% 8%,rgba(79,163,255,.14),transparent 32%),
+    radial-gradient(circle at 8% 85%,rgba(46,111,242,.10),transparent 38%),
     var(--bg);
   color:var(--text);
   min-height:100vh;
@@ -47,17 +50,33 @@ button{
   cursor:pointer;
 }
 
-.demo-bar{
-  background:#e7b83f;
-  color:#111;
-  text-align:center;
-  padding:8px 12px;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.4px;
+.demo-badge{
+  position:fixed;
+  bottom:16px;
+  right:16px;
+  z-index:200;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  background:rgba(10,21,38,.9);
+  border:1px solid rgba(255,255,255,.14);
+  backdrop-filter:blur(8px);
+  color:#c7cfda;
+  padding:8px 13px;
+  border-radius:30px;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.3px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
-/* NAVIGATION */
+.demo-badge .dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--blue2);
+  flex:none;
+}
 
 nav{
   height:80px;
@@ -66,7 +85,7 @@ nav{
   align-items:center;
   justify-content:space-between;
   border-bottom:1px solid var(--border);
-  background:rgba(7,17,31,.75);
+  background:rgba(5,10,20,.75);
   backdrop-filter:blur(15px);
   position:sticky;
   top:0;
@@ -74,21 +93,41 @@ nav{
 }
 
 .logo{
-  font-size:23px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo-mark{
+  width:34px;
+  height:34px;
+  border-radius:9px;
+  background:linear-gradient(135deg,var(--silver2),var(--silver) 45%,var(--blue2) 55%,var(--blue));
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:14px;
+  color:#08111f;
+  letter-spacing:-1px;
+}
+
+.logo-text{
+  font-size:20px;
   font-weight:800;
-  letter-spacing:-.7px;
+  letter-spacing:-.5px;
 }
 
-.logo span{
-  color:var(--gold2);
+.logo-text span{
+  color:var(--blue2);
 }
 
-.logo small{
+.logo-text small{
   display:block;
   font-size:8px;
-  letter-spacing:2px;
+  letter-spacing:1.6px;
   color:var(--muted);
-  margin-top:3px;
+  margin-top:2px;
+  font-weight:600;
 }
 
 .nav-actions{
@@ -109,18 +148,16 @@ nav{
   background:rgba(255,255,255,.09);
 }
 
-.btn-gold{
-  background:linear-gradient(135deg,var(--gold2),var(--gold));
-  color:#17120a;
+.btn-primary{
+  background:linear-gradient(135deg,var(--blue2),var(--blue));
+  color:#08111f;
   border:0;
   font-weight:800;
 }
 
-.btn-gold:hover{
+.btn-primary:hover{
   transform:translateY(-1px);
 }
-
-/* HERO */
 
 .hero{
   max-width:1200px;
@@ -135,9 +172,9 @@ nav{
 
 .badge{
   display:inline-block;
-  border:1px solid rgba(216,173,85,.35);
-  color:var(--gold2);
-  background:rgba(216,173,85,.07);
+  border:1px solid rgba(79,163,255,.35);
+  color:var(--blue2);
+  background:rgba(46,111,242,.08);
   padding:8px 13px;
   border-radius:30px;
   font-size:10px;
@@ -146,18 +183,21 @@ nav{
 }
 
 .hero h1{
-  font-size:clamp(46px,6vw,78px);
-  line-height:.98;
+  font-size:clamp(44px,6vw,74px);
+  line-height:1;
   margin:25px 0;
-  letter-spacing:-3px;
+  letter-spacing:-2.5px;
 }
 
 .hero h1 span{
-  color:var(--gold2);
+  background:linear-gradient(135deg,var(--silver2),var(--blue2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
 
 .hero p{
-  max-width:570px;
+  max-width:560px;
   color:var(--muted);
   line-height:1.8;
   font-size:16px;
@@ -170,8 +210,6 @@ nav{
   margin-top:30px;
 }
 
-/* CARD */
-
 .card-zone{
   display:flex;
   justify-content:center;
@@ -183,12 +221,12 @@ nav{
   max-width:100%;
   height:245px;
   padding:28px;
-  border-radius:27px;
+  border-radius:24px;
   position:relative;
   overflow:hidden;
   background:
-    linear-gradient(135deg,#273952 0%,#0c1625 50%,#070b12 100%);
-  border:1px solid rgba(255,255,255,.17);
+    linear-gradient(135deg,#1b2c46 0%,#0a1424 55%,#050a14 100%);
+  border:1px solid rgba(255,255,255,.16);
   box-shadow:0 35px 80px rgba(0,0,0,.55);
   transform:rotateY(-7deg) rotateX(3deg);
   transition:.5s;
@@ -204,7 +242,7 @@ nav{
   width:250px;
   height:250px;
   border-radius:50%;
-  border:1px solid rgba(216,173,85,.18);
+  border:1px solid rgba(79,163,255,.16);
   right:-100px;
   bottom:-100px;
 }
@@ -212,20 +250,22 @@ nav{
 .card-top{
   display:flex;
   justify-content:space-between;
+  align-items:center;
   font-weight:800;
 }
 
-.card-top span{
-  color:var(--gold2);
-  font-size:10px;
-  letter-spacing:2px;
+.card-top .mini-mark{
+  width:26px;
+  height:26px;
+  border-radius:7px;
+  background:linear-gradient(135deg,var(--silver2),var(--blue2));
 }
 
 .chip{
   width:45px;
   height:32px;
   border-radius:7px;
-  background:linear-gradient(135deg,#d7c18b,#806a38);
+  background:linear-gradient(135deg,#dfe6ee,#8fa2b8);
   margin-top:42px;
 }
 
@@ -247,12 +287,10 @@ nav{
   color:#9ba5b3;
 }
 
-/* FEATURES */
-
 .features{
   border-top:1px solid var(--border);
   padding:80px 6%;
-  background:rgba(0,0,0,.12);
+  background:rgba(0,0,0,.14);
 }
 
 .section-title{
@@ -261,8 +299,9 @@ nav{
 }
 
 .section-title h2{
-  font-size:35px;
+  font-size:34px;
   margin-bottom:10px;
+  letter-spacing:-1px;
 }
 
 .section-title p{
@@ -279,19 +318,22 @@ nav{
 
 .feature{
   padding:28px;
-  border-radius:22px;
+  border-radius:20px;
   background:rgba(255,255,255,.025);
   border:1px solid var(--border);
 }
 
-.feature-number{
-  color:var(--gold2);
-  font-size:12px;
-  font-weight:bold;
+.feature-mark{
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  background:linear-gradient(135deg,rgba(238,242,246,.16),rgba(79,163,255,.22));
+  border:1px solid rgba(255,255,255,.12);
 }
 
 .feature h3{
   margin:17px 0 10px;
+  font-size:18px;
 }
 
 .feature p{
@@ -300,17 +342,13 @@ nav{
   font-size:14px;
 }
 
-/* FOOTER */
-
 footer{
   border-top:1px solid var(--border);
-  padding:30px 6%;
+  padding:26px 6%;
   text-align:center;
-  color:#687487;
+  color:#5f6b7e;
   font-size:11px;
 }
-
-/* MODAL */
 
 .modal{
   display:none;
@@ -331,9 +369,9 @@ footer{
 .modal-box{
   width:100%;
   max-width:440px;
-  background:linear-gradient(145deg,#102036,#091321);
+  background:linear-gradient(145deg,#0d1c33,#070f1d);
   border:1px solid var(--border);
-  border-radius:25px;
+  border-radius:24px;
   padding:28px;
   box-shadow:0 30px 100px #000;
   max-height:90vh;
@@ -348,7 +386,7 @@ footer{
 }
 
 .modal-head h2{
-  font-size:24px;
+  font-size:23px;
 }
 
 .close{
@@ -383,7 +421,7 @@ footer{
 }
 
 .field input:focus{
-  border-color:rgba(216,173,85,.6);
+  border-color:rgba(79,163,255,.6);
 }
 
 .full{
@@ -397,8 +435,6 @@ footer{
   line-height:1.6;
   margin:15px 0;
 }
-
-/* DASHBOARD */
 
 .dashboard{
   display:none;
@@ -434,8 +470,8 @@ footer{
 
 .balance{
   padding:30px;
-  border-radius:25px;
-  background:linear-gradient(135deg,#172b45,#0c1727);
+  border-radius:24px;
+  background:linear-gradient(135deg,#122340,#091524);
   border:1px solid var(--border);
 }
 
@@ -451,12 +487,13 @@ footer{
 
 .demo-label{
   display:inline-block;
-  color:#111;
-  background:var(--gold2);
+  color:#08111f;
+  background:var(--blue2);
   padding:5px 9px;
   border-radius:5px;
   font-size:9px;
   font-weight:bold;
+  letter-spacing:.4px;
 }
 
 .quick-actions{
@@ -468,7 +505,7 @@ footer{
 
 .quick{
   padding:20px;
-  border-radius:17px;
+  border-radius:16px;
   border:1px solid var(--border);
   background:rgba(255,255,255,.03);
   color:white;
@@ -506,7 +543,7 @@ footer{
   width:38px;
   height:38px;
   border-radius:50%;
-  background:rgba(216,173,85,.1);
+  background:rgba(79,163,255,.1);
   display:grid;
   place-items:center;
 }
@@ -522,8 +559,6 @@ footer{
 .logout{
   color:#ff8585;
 }
-
-/* MOBILE */
 
 @media(max-width:850px){
 
@@ -573,12 +608,19 @@ footer{
   .balance h2{
     font-size:34px;
   }
+
+  .demo-badge{
+    bottom:12px;
+    right:12px;
+    font-size:9.5px;
+    padding:7px 11px;
+  }
 }
 
 @media(max-width:450px){
 
   .hero h1{
-    font-size:48px;
+    font-size:44px;
   }
 
   .bank-card{
@@ -599,21 +641,21 @@ footer{
 
 <body>
 
-<!-- AVERTISSEMENT -->
-
-<div class="demo-bar">
-  ⚠️ PROTOTYPE FICTIF — AUCUNE OPÉRATION BANCAIRE RÉELLE
+<div class="demo-badge">
+  <span class="dot"></span>
+  Maquette interne — VOTRE BANK
 </div>
-
-<!-- SITE PRINCIPAL -->
 
 <div id="homePage">
 
 <nav>
 
   <div class="logo">
-    Votre<span>Banque</span>
-    <small>EXPÉRIENCE NUMÉRIQUE</small>
+    <div class="logo-mark">VB</div>
+    <div class="logo-text">
+      VOTRE<span>BANK</span>
+      <small>VOS PROJETS, NOTRE PRIORITÉ</small>
+    </div>
   </div>
 
   <div class="nav-actions">
@@ -621,7 +663,7 @@ footer{
       Se connecter
     </button>
 
-    <button class="btn btn-gold" onclick="openModal('signupModal')">
+    <button class="btn btn-primary" onclick="openModal('signupModal')">
       Créer un compte
     </button>
   </div>
@@ -634,26 +676,26 @@ footer{
   <div>
 
     <span class="badge">
-      FINTECH • PROTOTYPE
+      MAQUETTE DE PRÉSENTATION
     </span>
 
     <h1>
       Votre argent.<br>
-      <span>Votre univers.</span>
+      <span>Votre priorité.</span>
     </h1>
 
     <p>
-      Une expérience bancaire numérique fictive,
-      élégante et moderne, pensée pour présenter
-      les possibilités d'une banque digitale premium.
+      Une expérience bancaire numérique élégante et moderne,
+      conçue pour présenter les possibilités d'une banque
+      digitale premium à l'équipe VOTRE BANK.
     </p>
 
     <div class="hero-buttons">
 
       <button
-        class="btn btn-gold"
+        class="btn btn-primary"
         onclick="openModal('signupModal')">
-        Commencer la démonstration
+        Voir la démonstration
       </button>
 
       <button
@@ -672,8 +714,8 @@ footer{
     <div class="bank-card">
 
       <div class="card-top">
-        <strong>Votre Banque</strong>
-        <span>DEMO</span>
+        <div class="mini-mark"></div>
+        <span>MAQUETTE</span>
       </div>
 
       <div class="chip"></div>
@@ -701,8 +743,7 @@ footer{
     <h2>Une expérience complète</h2>
 
     <p>
-      Découvrez les principales fonctionnalités
-      de cette maquette bancaire.
+      Les principales fonctionnalités envisagées pour VOTRE BANK.
     </p>
 
   </div>
@@ -711,29 +752,29 @@ footer{
   <div class="feature-grid">
 
     <div class="feature">
-      <span class="feature-number">01</span>
+      <div class="feature-mark"></div>
       <h3>Tableau de bord</h3>
       <p>
-        Consultez un solde fictif et visualisez
-        vos opérations de démonstration.
+        Un aperçu clair du solde et des dernières opérations,
+        pensé pour la lisibilité au quotidien.
       </p>
     </div>
 
     <div class="feature">
-      <span class="feature-number">02</span>
-      <h3>Transferts simulés</h3>
+      <div class="feature-mark"></div>
+      <h3>Transferts</h3>
       <p>
-        Testez une expérience de transfert
-        sans aucun mouvement d'argent réel.
+        Un parcours de virement simple et rassurant,
+        du premier clic à la confirmation.
       </p>
     </div>
 
     <div class="feature">
-      <span class="feature-number">03</span>
+      <div class="feature-mark"></div>
       <h3>Carte virtuelle</h3>
       <p>
-        Découvrez une carte entièrement fictive
-        avec un design premium.
+        Une carte numérique au design premium,
+        alignée avec l'identité VOTRE BANK.
       </p>
     </div>
 
@@ -743,21 +784,22 @@ footer{
 
 
 <footer>
-  Votre Banque — Prototype fictif à but démonstratif.
+  VOTRE BANK — Maquette de présentation, à usage interne uniquement.
 </footer>
 
 </div>
 
-
-<!-- DASHBOARD -->
 
 <div id="dashboard" class="dashboard">
 
   <div class="dashboard-top">
 
     <div class="logo">
-      Votre<span>Banque</span>
-      <small>ESPACE DÉMO</small>
+      <div class="logo-mark">VB</div>
+      <div class="logo-text">
+        VOTRE<span>BANK</span>
+        <small>ESPACE DÉMO</small>
+      </div>
     </div>
 
     <button class="btn logout" onclick="logout()">
@@ -771,7 +813,7 @@ footer{
 
     <div class="welcome">
       <h2>Bonjour, <span id="userName">Client</span> 👋</h2>
-      <p>Bienvenue dans votre espace de démonstration.</p>
+      <p>Bienvenue dans l'espace de démonstration VOTRE BANK.</p>
     </div>
 
 
@@ -899,8 +941,6 @@ footer{
 </div>
 
 
-<!-- MODAL CONNEXION -->
-
 <div class="modal" id="loginModal">
 
   <div class="modal-box">
@@ -920,7 +960,7 @@ footer{
     <div class="field">
 
       <label>
-        E-MAIL DE DÉMONSTRATION
+        E-MAIL
       </label>
 
       <input
@@ -934,7 +974,7 @@ footer{
     <div class="field">
 
       <label>
-        MOT DE PASSE DE DÉMONSTRATION
+        MOT DE PASSE
       </label>
 
       <input
@@ -945,7 +985,7 @@ footer{
 
 
     <button
-      class="btn btn-gold full"
+      class="btn btn-primary full"
       onclick="login()">
 
       Se connecter
@@ -954,8 +994,8 @@ footer{
 
 
     <p class="notice">
-      Ceci est uniquement une connexion de démonstration.
-      Aucun compte bancaire réel n'est connecté.
+      Maquette interne — n'utilisez jamais vos véritables
+      identifiants bancaires ici.
     </p>
 
   </div>
@@ -963,15 +1003,13 @@ footer{
 </div>
 
 
-<!-- MODAL INSCRIPTION -->
-
 <div class="modal" id="signupModal">
 
   <div class="modal-box">
 
     <div class="modal-head">
 
-      <h2>Créer un compte démo</h2>
+      <h2>Créer mon compte</h2>
 
       <button class="close"
         onclick="closeModal('signupModal')">
@@ -1006,7 +1044,7 @@ footer{
 
     <div class="field">
 
-      <label>E-MAIL DE DÉMONSTRATION</label>
+      <label>E-MAIL</label>
 
       <input
         type="email"
@@ -1017,7 +1055,7 @@ footer{
 
     <div class="field">
 
-      <label>TÉLÉPHONE DE DÉMONSTRATION</label>
+      <label>TÉLÉPHONE</label>
 
       <input
         type="text"
@@ -1038,17 +1076,16 @@ footer{
 
 
     <p class="notice">
-      Les informations saisies servent uniquement à cette
-      démonstration. Ne saisissez jamais vos véritables
+      Maquette interne — ne saisissez jamais vos véritables
       identifiants bancaires, numéro de carte, CVV ou code PIN.
     </p>
 
 
     <button
-      class="btn btn-gold full"
+      class="btn btn-primary full"
       onclick="createAccount()">
 
-      Créer mon compte démo
+      Créer mon compte
 
     </button>
 
@@ -1056,8 +1093,6 @@ footer{
 
 </div>
 
-
-<!-- JAVASCRIPT -->
 
 <script>
 
@@ -1183,3 +1218,4 @@ window.onclick=function(event){
 
 </body>
 </html>
+```
