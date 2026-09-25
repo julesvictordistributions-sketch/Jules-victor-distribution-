@@ -1,218 +1,109 @@
-"use client";
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Votre Banque | Prototype</title>
 
-import { useState } from "react";
-
-export default function Home() {
-  const [showLogin, setShowLogin] = useState(false);
-  const [showSignup, setShowSignup] = useState(false);
-
-  return (
-    <main className="min-h-screen bg-[#07111f] text-white">
-      {/* DEMO NOTICE */}
-      <div className="bg-amber-500 px-4 py-2 text-center text-xs font-semibold text-black">
-        PROTOTYPE FICTIF — AUCUNE OPÉRATION BANCAIRE RÉELLE
-      </div>
-
-      {/* NAVBAR */}
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-        <div>
-          <h1 className="text-2xl font-bold tracking-wide">
-            Votre<span className="text-amber-400"> Banque</span>
-          </h1>
-          <p className="text-xs text-gray-400">Prototype numérique</p>
-        </div>
-
-        <div className="flex gap-3">
-          <button
-            onClick={() => setShowLogin(true)}
-            className="rounded-xl border border-white/20 px-4 py-2 text-sm transition hover:bg-white/10"
-          >
-            Connexion
-          </button>
-
-          <button
-            onClick={() => setShowSignup(true)}
-            className="rounded-xl bg-amber-400 px-4 py-2 text-sm font-semibold text-black transition hover:bg-amber-300"
-          >
-            Créer un compte
-          </button>
-        </div>
-      </nav>
-
-      {/* HERO */}
-      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center">
-        <div>
-          <span className="rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-xs text-amber-300">
-            FINTECH • PROTOTYPE
-          </span>
-
-          <h2 className="mt-8 text-5xl font-bold leading-tight md:text-7xl">
-            Votre argent.
-            <br />
-            <span className="text-amber-400">Votre univers.</span>
-          </h2>
-
-          <p className="mt-6 max-w-xl text-lg leading-8 text-gray-400">
-            Une interface bancaire fictive conçue pour présenter une
-            expérience numérique premium, simple et moderne.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-4">
-            <button
-              onClick={() => setShowSignup(true)}
-              className="rounded-2xl bg-amber-400 px-7 py-4 font-semibold text-black shadow-lg shadow-amber-400/10"
-            >
-              Commencer la démonstration
-            </button>
-
-            <button
-              onClick={() => setShowLogin(true)}
-              className="rounded-2xl border border-white/15 px-7 py-4"
-            >
-              Se connecter
-            </button>
-          </div>
-        </div>
-
-        {/* VIRTUAL CARD */}
-        <div className="relative">
-          <div className="absolute -inset-10 rounded-full bg-amber-400/10 blur-3xl" />
-
-          <div className="relative mx-auto max-w-md rounded-[30px] border border-white/20 bg-gradient-to-br from-slate-800 via-slate-900 to-black p-7 shadow-2xl">
-            <div className="flex items-center justify-between">
-              <span className="font-semibold">Votre Banque</span>
-              <span className="text-sm text-amber-400">DEMO</span>
-            </div>
-
-            <div className="mt-20">
-              <p className="text-xs text-gray-400">SOLDE DE DÉMONSTRATION</p>
-              <p className="mt-2 text-4xl font-bold">12 480,00 €</p>
-            </div>
-
-            <div className="mt-12 flex justify-between">
-              <div>
-                <p className="text-xs text-gray-500">TITULAIRE</p>
-                <p className="mt-1 text-sm">CLIENT DÉMO</p>
-              </div>
-
-              <div>
-                <p className="text-xs text-gray-500">CARTE</p>
-                <p className="mt-1 text-sm">•••• 0000</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section className="border-t border-white/10 bg-black/20 px-6 py-20">
-        <div className="mx-auto max-w-7xl">
-          <h3 className="text-3xl font-bold">Une expérience complète</h3>
-
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {[
-              ["01", "Tableau de bord", "Visualisez votre solde et vos opérations fictives."],
-              ["02", "Transferts", "Simulez l'envoi d'argent entre utilisateurs fictifs."],
-              ["03", "Carte virtuelle", "Découvrez une carte numérique entièrement fictive."],
-            ].map(([number, title, description]) => (
-              <div
-                key={number}
-                className="rounded-3xl border border-white/10 bg-white/[0.03] p-7"
-              >
-                <span className="text-sm text-amber-400">{number}</span>
-                <h4 className="mt-5 text-xl font-semibold">{title}</h4>
-                <p className="mt-3 leading-7 text-gray-400">{description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-gray-500">
-        Votre Banque — Prototype fictif à but démonstratif.
-      </footer>
-
-      {/* LOGIN MODAL */}
-      {showLogin && (
-        <Modal title="Connexion" close={() => setShowLogin(false)}>
-          <input
-            type="email"
-            placeholder="E-mail de démonstration"
-            className="input"
-          />
-
-          <input
-            type="password"
-            placeholder="Mot de passe de démonstration"
-            className="input"
-          />
-
-          <button className="primary">
-            Se connecter
-          </button>
-        </Modal>
-      )}
-
-      {/* SIGNUP MODAL */}
-      {showSignup && (
-        <Modal title="Créer un compte démo" close={() => setShowSignup(false)}>
-          <input placeholder="Prénom" className="input" />
-          <input placeholder="Nom" className="input" />
-          <input
-            type="email"
-            placeholder="E-mail de démonstration"
-            className="input"
-          />
-          <input
-            placeholder="Téléphone de démonstration"
-            className="input"
-          />
-          <input
-            type="password"
-            placeholder="Mot de passe"
-            className="input"
-          />
-
-          <p className="text-xs leading-5 text-gray-500">
-            Les informations saisies servent uniquement à cette démonstration
-            et ne permettent pas d'ouvrir un compte bancaire réel.
-          </p>
-
-          <button className="primary">
-            Créer mon compte démo
-          </button>
-        </Modal>
-      )}
-    </main>
-  );
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-function Modal({
-  title,
-  close,
-  children,
-}: {
-  title: string;
-  close: () => void;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-5 backdrop-blur-md">
-      <div className="w-full max-w-md rounded-3xl border border-white/10 bg-[#0c1727] p-7 shadow-2xl">
-        <div className="mb-7 flex items-center justify-between">
-          <h2 className="text-2xl font-bold">{title}</h2>
-
-          <button
-            onClick={close}
-            className="text-2xl text-gray-500 hover:text-white"
-          >
-            ×
-          </button>
-        </div>
-
-        <div className="space-y-4">{children}</div>
-      </div>
-    </div>
-  );
+:root{
+  --bg:#07111f;
+  --panel:#0d1b2e;
+  --panel2:#101f34;
+  --gold:#d8ad55;
+  --gold2:#f0cc7a;
+  --text:#f5f5f5;
+  --muted:#8e9aaa;
+  --border:rgba(255,255,255,.09);
+  --green:#43d19e;
+  --red:#ff7272;
 }
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 80% 10%,rgba(216,173,85,.10),transparent 30%),
+    radial-gradient(circle at 10% 80%,rgba(20,90,150,.12),transparent 35%),
+    var(--bg);
+  color:var(--text);
+  min-height:100vh;
+}
+
+button,input{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+.demo-bar{
+  background:#e7b83f;
+  color:#111;
+  text-align:center;
+  padding:8px 12px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.4px;
+}
+
+/* NAVIGATION */
+
+nav{
+  height:80px;
+  padding:0 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--border);
+  background:rgba(7,17,31,.75);
+  backdrop-filter:blur(15px);
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+
+.logo{
+  font-size:23px;
+  font-weight:800;
+  letter-spacing:-.7px;
+}
+
+.logo span{
+  color:var(--gold2);
+}
+
+.logo small{
+  display:block;
+  font-size:8px;
+  letter-spacing:2px;
+  color:var(--muted);
+  margin-top:3px;
+}
+
+.nav-actions{
+  display:flex;
+  gap:10px;
+}
+
+.btn{
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.04);
+  color:white;
+  padding:11px 17px;
+  border-radius:12px;
+  transition:.2s;
+}
+
+.btn:hover{
+ 
