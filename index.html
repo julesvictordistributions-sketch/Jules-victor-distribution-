@@ -1,198 +1,218 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AVEM Groupe - Jules Victor Distribution | Spécialiste Distributeurs Automatiques</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0A1A2F;color:#fff;font-family:Arial,sans-serif;line-height:1.6}
+"use client";
 
-header{text-align:center;padding:90px 20px;background:linear-gradient(180deg,#0A1A2F 0%,#0055A4 100%);border-bottom:4px solid #EF4135}
-h1{color:#fff;font-size:46px;margin-bottom:10px;font-weight:bold}
-header p{color:#fff;font-size:19px;margin-bottom:20px}
-.rating{margin-top:15px;color:#FFD700;font-weight:bold;font-size:18px}
+import { useState } from "react";
 
-.compteur{background:#0055A4;padding:50px 20px;text-align:center;border-top:3px solid #EF4135;border-bottom:3px solid #EF4135}
-.compteur h3{color:#fff;font-size:30px;font-weight:bold}
-.compteur p{color:#fff;font-size:16px;margin-top:10px}
+export default function Home() {
+  const [showLogin, setShowLogin] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
 
-.confiance{padding:70px 20px;background:#0A1A2F;text-align:center}
-.confiance h2{color:#fff;font-size:32px;margin-bottom:20px}
-.confiance p{color:#ddd;font-size:17px;max-width:700px;margin:0 auto 30px}
-.checks{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;max-width:900px;margin:0 auto}
-.check{background:#1a2f4f;padding:20px;border-radius:10px;border:2px solid #0055A4;width:270px}
-.check strong{color:#EF4135}
+  return (
+    <main className="min-h-screen bg-[#07111f] text-white">
+      {/* DEMO NOTICE */}
+      <div className="bg-amber-500 px-4 py-2 text-center text-xs font-semibold text-black">
+        PROTOTYPE FICTIF — AUCUNE OPÉRATION BANCAIRE RÉELLE
+      </div>
 
-.ebooks{padding:80px 20px;background:#0055A4}
-.ebooks h2{text-align:center;color:#fff;font-size:36px;margin-bottom:50px}
-.ebook-grid{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;max-width:1200px;margin:0 auto}
-.ebook{background:#0A1A2F;border-radius:14px;border:3px solid #EF4135;width:320px;overflow:hidden;transition:transform 0.4s, box-shadow 0.4s; perspective:1000px;}
-.ebook:hover{transform:translateY(-10px) rotateY(5deg); box-shadow:0 15px 30px rgba(239,65,53,0.4)}
-.ebook-img{width:100%;height:220px;object-fit:cover;transform-style:preserve-3d; transition:transform 0.4s;}
-.ebook:hover .ebook-img{transform:scale(1.05) rotateX(5deg)}
-.ebook-content{padding:25px}
-.ebook h3{color:#EF4135;font-size:20px;margin:15px 0;min-height:50px}
-.prix-ebook{color:#EF4135;font-size:38px;font-weight:bold;margin:15px 0}
-.btn{background:#EF4135;color:#fff;padding:15px 25px;border:none;border-radius:8px;font-weight:bold;width:100%;display:block;text-align:center;text-decoration:none;font-size:16px;cursor:pointer;transition:background 0.3s}
-.btn:hover{background:#d1382e}
+      {/* NAVBAR */}
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+        <div>
+          <h1 className="text-2xl font-bold tracking-wide">
+            Votre<span className="text-amber-400"> Banque</span>
+          </h1>
+          <p className="text-xs text-gray-400">Prototype numérique</p>
+        </div>
 
-.pricing{padding:80px 20px;background:#0A1A2F}
-.pricing h2{text-align:center;color:#fff;font-size:36px;margin-bottom:50px}
-.cards{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;max-width:1200px;margin:0 auto}
-.card{background:#1a2f4f;padding:35px;border-radius:14px;border:3px solid #0055A4;width:340px;position:relative;transition:transform 0.3s}
-.card:hover{transform:translateY(-5px)}
-.badge{position:absolute;top:-12px;right:20px;background:#EF4135;color:#fff;padding:6px 16px;border-radius:20px;font-size:12px;font-weight:bold}
-.delai{color:#FFD700;font-size:13px;text-align:center;margin-top:10px;font-weight:bold}
-.card h3{color:#fff;font-size:24px;margin-bottom:20px;text-align:center}
-.photo{width:100%;height:200px;border-radius:10px;border:2px solid #0055A4;object-fit:cover;margin-bottom:20px}
-.prix{color:#EF4135;font-size:42px;font-weight:bold;text-align:center;margin:20px 0}
-.prix small{font-size:18px;color:#fff}
+        <div className="flex gap-3">
+          <button
+            onClick={() => setShowLogin(true)}
+            className="rounded-xl border border-white/20 px-4 py-2 text-sm transition hover:bg-white/10"
+          >
+            Connexion
+          </button>
 
-.temoignages{padding:70px 20px;background:#0055A4}
-.temoignages h2{text-align:center;color:#fff;font-size:32px;margin-bottom:40px}
-.avis-grid{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;max-width:1000px;margin:0 auto}
-.avis{background:#0A1A2F;padding:25px;border-radius:10px;border:2px solid #EF4135;width:300px}
-.avis p{color:#ddd;font-style:italic}
-.avis strong{color:#EF4135;display:block;margin-top:15px}
+          <button
+            onClick={() => setShowSignup(true)}
+            className="rounded-xl bg-amber-400 px-4 py-2 text-sm font-semibold text-black transition hover:bg-amber-300"
+          >
+            Créer un compte
+          </button>
+        </div>
+      </nav>
 
-.legal{background:#0A1A2F;padding:50px 20px;text-align:center;border-top:4px solid #EF4135}
-.legal h3{color:#fff;font-size:22px;margin-bottom:15px}
-.legal p{color:#ddd;font-size:14px;margin:5px 0}
+      {/* HERO */}
+      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center">
+        <div>
+          <span className="rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-xs text-amber-300">
+            FINTECH • PROTOTYPE
+          </span>
 
-footer{text-align:center;padding:25px 20px;background:#0055A4;color:#fff;font-size:13px}
+          <h2 className="mt-8 text-5xl font-bold leading-tight md:text-7xl">
+            Votre argent.
+            <br />
+            <span className="text-amber-400">Votre univers.</span>
+          </h2>
 
-@media(max-width:768px){
-  h1{font-size:30px}
-  .ebook,.card{width:100%}
+          <p className="mt-6 max-w-xl text-lg leading-8 text-gray-400">
+            Une interface bancaire fictive conçue pour présenter une
+            expérience numérique premium, simple et moderne.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <button
+              onClick={() => setShowSignup(true)}
+              className="rounded-2xl bg-amber-400 px-7 py-4 font-semibold text-black shadow-lg shadow-amber-400/10"
+            >
+              Commencer la démonstration
+            </button>
+
+            <button
+              onClick={() => setShowLogin(true)}
+              className="rounded-2xl border border-white/15 px-7 py-4"
+            >
+              Se connecter
+            </button>
+          </div>
+        </div>
+
+        {/* VIRTUAL CARD */}
+        <div className="relative">
+          <div className="absolute -inset-10 rounded-full bg-amber-400/10 blur-3xl" />
+
+          <div className="relative mx-auto max-w-md rounded-[30px] border border-white/20 bg-gradient-to-br from-slate-800 via-slate-900 to-black p-7 shadow-2xl">
+            <div className="flex items-center justify-between">
+              <span className="font-semibold">Votre Banque</span>
+              <span className="text-sm text-amber-400">DEMO</span>
+            </div>
+
+            <div className="mt-20">
+              <p className="text-xs text-gray-400">SOLDE DE DÉMONSTRATION</p>
+              <p className="mt-2 text-4xl font-bold">12 480,00 €</p>
+            </div>
+
+            <div className="mt-12 flex justify-between">
+              <div>
+                <p className="text-xs text-gray-500">TITULAIRE</p>
+                <p className="mt-1 text-sm">CLIENT DÉMO</p>
+              </div>
+
+              <div>
+                <p className="text-xs text-gray-500">CARTE</p>
+                <p className="mt-1 text-sm">•••• 0000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section className="border-t border-white/10 bg-black/20 px-6 py-20">
+        <div className="mx-auto max-w-7xl">
+          <h3 className="text-3xl font-bold">Une expérience complète</h3>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {[
+              ["01", "Tableau de bord", "Visualisez votre solde et vos opérations fictives."],
+              ["02", "Transferts", "Simulez l'envoi d'argent entre utilisateurs fictifs."],
+              ["03", "Carte virtuelle", "Découvrez une carte numérique entièrement fictive."],
+            ].map(([number, title, description]) => (
+              <div
+                key={number}
+                className="rounded-3xl border border-white/10 bg-white/[0.03] p-7"
+              >
+                <span className="text-sm text-amber-400">{number}</span>
+                <h4 className="mt-5 text-xl font-semibold">{title}</h4>
+                <p className="mt-3 leading-7 text-gray-400">{description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-gray-500">
+        Votre Banque — Prototype fictif à but démonstratif.
+      </footer>
+
+      {/* LOGIN MODAL */}
+      {showLogin && (
+        <Modal title="Connexion" close={() => setShowLogin(false)}>
+          <input
+            type="email"
+            placeholder="E-mail de démonstration"
+            className="input"
+          />
+
+          <input
+            type="password"
+            placeholder="Mot de passe de démonstration"
+            className="input"
+          />
+
+          <button className="primary">
+            Se connecter
+          </button>
+        </Modal>
+      )}
+
+      {/* SIGNUP MODAL */}
+      {showSignup && (
+        <Modal title="Créer un compte démo" close={() => setShowSignup(false)}>
+          <input placeholder="Prénom" className="input" />
+          <input placeholder="Nom" className="input" />
+          <input
+            type="email"
+            placeholder="E-mail de démonstration"
+            className="input"
+          />
+          <input
+            placeholder="Téléphone de démonstration"
+            className="input"
+          />
+          <input
+            type="password"
+            placeholder="Mot de passe"
+            className="input"
+          />
+
+          <p className="text-xs leading-5 text-gray-500">
+            Les informations saisies servent uniquement à cette démonstration
+            et ne permettent pas d'ouvrir un compte bancaire réel.
+          </p>
+
+          <button className="primary">
+            Créer mon compte démo
+          </button>
+        </Modal>
+      )}
+    </main>
+  );
 }
-</style>
-</head>
-<body>
 
-<header>
-  <h1>JULES VICTOR DISTRIBUTION</h1>
-  <p>LE SPÉCIALISTE DES DISTRIBUTEURS AUTOMATIQUES EN FRANCE</p>
-  <div class="rating">★★☆ 4.5/5 - Plus de 200 avis clients</div>
-</header>
+function Modal({
+  title,
+  close,
+  children,
+}: {
+  title: string;
+  close: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-5 backdrop-blur-md">
+      <div className="w-full max-w-md rounded-3xl border border-white/10 bg-[#0c1727] p-7 shadow-2xl">
+        <div className="mb-7 flex items-center justify-between">
+          <h2 className="text-2xl font-bold">{title}</h2>
 
-<section class="compteur">
-  <h3>+150 Distributeurs Déjà Installés</h3>
-  <p>Partout en France. Accompagnement de A à Z</p>
-</section>
+          <button
+            onClick={close}
+            className="text-2xl text-gray-500 hover:text-white"
+          >
+            ×
+          </button>
+        </div>
 
-<section class="confiance">
-  <h2>Votre Investissement Est Sécurisé</h2>
-  <p>Nous savons que se lancer fait peur. C'est pourquoi nous vous accompagnons à chaque étape, avec transparence et professionnalisme.</p>
-  <div class="checks">
-    <div class="check"><strong>Société Enregistrée</strong><br>Structure légale en France</div>
-    <div class="check"><strong>Support Réactif</strong><br>On vous répond sous 24h</div>
-    <div class="check"><strong>Installation 15 Jours</strong><br>Partout en France métropolitaine</div>
-  </div>
-</section>
-
-<section class="ebooks">
-  <h2>Nos 3 Guides Premium</h2>
-  <div class="ebook-grid">
-    
-    <div class="ebook">
-      <img src="ebook1.jpg" class="ebook-img" alt="Guide 1">
-      <div class="ebook-content">
-        <h3>"0 à 1er Distributeur en 30 Jours"</h3>
-        <p>La méthode pas à pas pour lancer votre business, même débutant.</p>
-        <div class="prix-ebook">20 €</div>
-        <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Ebook 1" class="btn">Recevoir par Email</a>
+        <div className="space-y-4">{children}</div>
       </div>
     </div>
-
-    <div class="ebook">
-      <img src="ebook2.jpg" class="ebook-img" alt="Guide 2">
-      <div class="ebook-content">
-        <h3>"Les 15 Emplacements en Or"</h3>
-        <p>Découvrez où installer pour maximiser vos revenus dès le 1er mois.</p>
-        <div class="prix-ebook">30 €</div>
-        <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Ebook 2" class="btn">Recevoir par Email</a>
-      </div>
-    </div>
-
-    <div class="ebook">
-      <img src="ebook3.jpg" class="ebook-img" alt="Guide 3">
-      <div class="ebook-content">
-        <h3>"Maintenance Pro + Dépannage Express"</h3>
-        <p>Évitez les pannes coûteuses. Devenez autonome en 1 semaine.</p>
-        <div class="prix-ebook">40 €</div>
-        <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Ebook 3" class="btn">Recevoir par Email</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="pricing">
-  <h2>Nos Packs Distributeurs</h2>
-  <div class="cards">
-    
-    <div class="card">
-      <h3>Snacks Essentiel</h3>
-      <img src="distributeur-snacks.jpg" class="photo" alt="Distributeur Snacks">
-      <div class="prix">1600 €<small>/mois</small></div>
-      <p style="text-align:center;margin-bottom:10px">Idéal pour bureaux et petites salles</p>
-      <p class="delai">✓ Installation sous 15 jours</p>
-      <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Pack Snacks" class="btn">Je commande</a>
-    </div>
-
-    <div class="card">
-      <div class="badge">POPULAIRE</div>
-      <h3>Boissons Pro</h3>
-      <img src="distributeur-boissons.jpg" class="photo" alt="Distributeur Boissons">
-      <div class="prix">2600 €<small>/mois</small></div>
-      <p style="text-align:center;margin-bottom:10px">Le plus vendu pour gyms et entreprises</p>
-      <p class="delai">✓ Installation sous 15 jours</p>
-      <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Pack Boissons" class="btn">Je commande</a>
-    </div>
-
-    <div class="card">
-      <h3>Pack Combo Premium</h3>
-      <img src="distributeur-combo.jpg" class="photo" alt="Distributeur Combo">
-      <div class="prix">3600 €<small>/mois</small></div>
-      <p style="text-align:center;margin-bottom:10px">Snacks + Boissons. Max de profits</p>
-      <p class="delai">✓ Installation sous 15 jours</p>
-      <a href="mailto:Julesvictordistributions@gmail.com?subject=Commande Pack Combo" class="btn">Je commande</a>
-    </div>
-
-  </div>
-</section>
-
-<section class="temoignages">
-  <h2>Ils Nous Font Confiance</h2>
-  <div class="avis-grid">
-    <div class="avis">
-      <p>"Service impeccable. Mon distributeur est installé en 2 semaines. Rentable dès le 1er mois."</p>
-      <strong>Marc D. - Lyon</strong>
-    </div>
-    <div class="avis">
-      <p>"Équipe pro et à l'écoute. Les guides m'ont vraiment aidé à me lancer sans stress."</p>
-      <strong>Sophie L. - Paris</strong>
-    </div>
-    <div class="avis">
-      <p>"Investissement sécurisé. Je recommande à 100%. Le support est top."</p>
-      <strong>Thomas R. - Marseille</strong>
-    </div>
-  </div>
-</section>
-
-<section class="legal">
-  <h3>AVEM GROUPE</h3>
-  <p>SIRET : 322 806 106 00166</p>
-  <p>SIREN : 322 806 106</p>
-  <p>24 Rue Camille Guérin - 53000 Laval, France</p>
-  <p>Email : Julesvictordistributions@gmail.com</p>
-  <p style="margin-top:15px">TVA non applicable, art. 293 B du CGI</p>
-</section>
-
-<footer>
-  <p>© 2026 AVEM Groupe - Jules Victor Distribution. Tous droits réservés.</p>
-</footer>
-
-</body>
-  </html> 
+  );
+}
