@@ -106,4 +106,1080 @@ nav{
 }
 
 .btn:hover{
- 
+  background:rgba(255,255,255,.09);
+}
+
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#17120a;
+  border:0;
+  font-weight:800;
+}
+
+.btn-gold:hover{
+  transform:translateY(-1px);
+}
+
+/* HERO */
+
+.hero{
+  max-width:1200px;
+  margin:auto;
+  min-height:620px;
+  padding:80px 6%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-block;
+  border:1px solid rgba(216,173,85,.35);
+  color:var(--gold2);
+  background:rgba(216,173,85,.07);
+  padding:8px 13px;
+  border-radius:30px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.hero h1{
+  font-size:clamp(46px,6vw,78px);
+  line-height:.98;
+  margin:25px 0;
+  letter-spacing:-3px;
+}
+
+.hero h1 span{
+  color:var(--gold2);
+}
+
+.hero p{
+  max-width:570px;
+  color:var(--muted);
+  line-height:1.8;
+  font-size:16px;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px;
+}
+
+/* CARD */
+
+.card-zone{
+  display:flex;
+  justify-content:center;
+  perspective:1000px;
+}
+
+.bank-card{
+  width:390px;
+  max-width:100%;
+  height:245px;
+  padding:28px;
+  border-radius:27px;
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(135deg,#273952 0%,#0c1625 50%,#070b12 100%);
+  border:1px solid rgba(255,255,255,.17);
+  box-shadow:0 35px 80px rgba(0,0,0,.55);
+  transform:rotateY(-7deg) rotateX(3deg);
+  transition:.5s;
+}
+
+.bank-card:hover{
+  transform:rotateY(0) rotateX(0) translateY(-5px);
+}
+
+.bank-card:after{
+  content:"";
+  position:absolute;
+  width:250px;
+  height:250px;
+  border-radius:50%;
+  border:1px solid rgba(216,173,85,.18);
+  right:-100px;
+  bottom:-100px;
+}
+
+.card-top{
+  display:flex;
+  justify-content:space-between;
+  font-weight:800;
+}
+
+.card-top span{
+  color:var(--gold2);
+  font-size:10px;
+  letter-spacing:2px;
+}
+
+.chip{
+  width:45px;
+  height:32px;
+  border-radius:7px;
+  background:linear-gradient(135deg,#d7c18b,#806a38);
+  margin-top:42px;
+}
+
+.card-number{
+  margin-top:17px;
+  font-size:16px;
+  letter-spacing:3px;
+  color:#d9dee5;
+}
+
+.card-bottom{
+  position:absolute;
+  bottom:25px;
+  left:28px;
+  right:28px;
+  display:flex;
+  justify-content:space-between;
+  font-size:10px;
+  color:#9ba5b3;
+}
+
+/* FEATURES */
+
+.features{
+  border-top:1px solid var(--border);
+  padding:80px 6%;
+  background:rgba(0,0,0,.12);
+}
+
+.section-title{
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-title h2{
+  font-size:35px;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:var(--muted);
+}
+
+.feature-grid{
+  max-width:1200px;
+  margin:40px auto 0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.feature{
+  padding:28px;
+  border-radius:22px;
+  background:rgba(255,255,255,.025);
+  border:1px solid var(--border);
+}
+
+.feature-number{
+  color:var(--gold2);
+  font-size:12px;
+  font-weight:bold;
+}
+
+.feature h3{
+  margin:17px 0 10px;
+}
+
+.feature p{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:14px;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid var(--border);
+  padding:30px 6%;
+  text-align:center;
+  color:#687487;
+  font-size:11px;
+}
+
+/* MODAL */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.78);
+  backdrop-filter:blur(10px);
+  z-index:100;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:100%;
+  max-width:440px;
+  background:linear-gradient(145deg,#102036,#091321);
+  border:1px solid var(--border);
+  border-radius:25px;
+  padding:28px;
+  box-shadow:0 30px 100px #000;
+  max-height:90vh;
+  overflow:auto;
+}
+
+.modal-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:24px;
+}
+
+.modal-head h2{
+  font-size:24px;
+}
+
+.close{
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  border:1px solid var(--border);
+  background:transparent;
+  color:white;
+  font-size:20px;
+}
+
+.field{
+  margin-bottom:13px;
+}
+
+.field label{
+  display:block;
+  color:#aeb8c5;
+  font-size:11px;
+  margin-bottom:7px;
+}
+
+.field input{
+  width:100%;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.045);
+  color:white;
+  padding:14px;
+  border-radius:12px;
+  outline:none;
+}
+
+.field input:focus{
+  border-color:rgba(216,173,85,.6);
+}
+
+.full{
+  width:100%;
+  margin-top:7px;
+}
+
+.notice{
+  color:#7e8a9a;
+  font-size:10px;
+  line-height:1.6;
+  margin:15px 0;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+  display:none;
+  min-height:100vh;
+}
+
+.dashboard.active{
+  display:block;
+}
+
+.dashboard-top{
+  padding:25px 6%;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.dashboard-main{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 6%;
+}
+
+.welcome{
+  margin-bottom:25px;
+}
+
+.welcome p{
+  color:var(--muted);
+  margin-top:6px;
+}
+
+.balance{
+  padding:30px;
+  border-radius:25px;
+  background:linear-gradient(135deg,#172b45,#0c1727);
+  border:1px solid var(--border);
+}
+
+.balance small{
+  color:var(--muted);
+  font-size:11px;
+}
+
+.balance h2{
+  font-size:42px;
+  margin:10px 0;
+}
+
+.demo-label{
+  display:inline-block;
+  color:#111;
+  background:var(--gold2);
+  padding:5px 9px;
+  border-radius:5px;
+  font-size:9px;
+  font-weight:bold;
+}
+
+.quick-actions{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin:20px 0;
+}
+
+.quick{
+  padding:20px;
+  border-radius:17px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
+  color:white;
+  text-align:left;
+}
+
+.quick strong{
+  display:block;
+  margin-top:10px;
+}
+
+.transactions{
+  margin-top:30px;
+}
+
+.transactions h3{
+  margin-bottom:15px;
+}
+
+.transaction{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:17px;
+  border-bottom:1px solid var(--border);
+}
+
+.transaction-name{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.transaction-icon{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:rgba(216,173,85,.1);
+  display:grid;
+  place-items:center;
+}
+
+.plus{
+  color:var(--green);
+}
+
+.minus{
+  color:var(--red);
+}
+
+.logout{
+  color:#ff8585;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  nav{
+    padding:0 5%;
+  }
+
+  .nav-actions .btn{
+    display:none;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    padding:65px 5%;
+    text-align:center;
+    gap:55px;
+  }
+
+  .hero p{
+    margin:auto;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .bank-card{
+    transform:none;
+  }
+
+  .feature-grid{
+    grid-template-columns:1fr;
+  }
+
+  .features{
+    padding:60px 5%;
+  }
+
+  .quick-actions{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .dashboard-main{
+    padding:30px 5%;
+  }
+
+  .balance h2{
+    font-size:34px;
+  }
+}
+
+@media(max-width:450px){
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .bank-card{
+    height:220px;
+    padding:23px;
+  }
+
+  .card-number{
+    font-size:13px;
+  }
+
+  .quick-actions{
+    grid-template-columns:1fr 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- AVERTISSEMENT -->
+
+<div class="demo-bar">
+  ⚠️ PROTOTYPE FICTIF — AUCUNE OPÉRATION BANCAIRE RÉELLE
+</div>
+
+<!-- SITE PRINCIPAL -->
+
+<div id="homePage">
+
+<nav>
+
+  <div class="logo">
+    Votre<span>Banque</span>
+    <small>EXPÉRIENCE NUMÉRIQUE</small>
+  </div>
+
+  <div class="nav-actions">
+    <button class="btn" onclick="openModal('loginModal')">
+      Se connecter
+    </button>
+
+    <button class="btn btn-gold" onclick="openModal('signupModal')">
+      Créer un compte
+    </button>
+  </div>
+
+</nav>
+
+
+<section class="hero">
+
+  <div>
+
+    <span class="badge">
+      FINTECH • PROTOTYPE
+    </span>
+
+    <h1>
+      Votre argent.<br>
+      <span>Votre univers.</span>
+    </h1>
+
+    <p>
+      Une expérience bancaire numérique fictive,
+      élégante et moderne, pensée pour présenter
+      les possibilités d'une banque digitale premium.
+    </p>
+
+    <div class="hero-buttons">
+
+      <button
+        class="btn btn-gold"
+        onclick="openModal('signupModal')">
+        Commencer la démonstration
+      </button>
+
+      <button
+        class="btn"
+        onclick="openModal('loginModal')">
+        Se connecter
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="card-zone">
+
+    <div class="bank-card">
+
+      <div class="card-top">
+        <strong>Votre Banque</strong>
+        <span>DEMO</span>
+      </div>
+
+      <div class="chip"></div>
+
+      <div class="card-number">
+        •••• &nbsp; •••• &nbsp; •••• &nbsp; 0000
+      </div>
+
+      <div class="card-bottom">
+        <span>CLIENT DÉMO</span>
+        <span>NON UTILISABLE</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="features">
+
+  <div class="section-title">
+
+    <h2>Une expérience complète</h2>
+
+    <p>
+      Découvrez les principales fonctionnalités
+      de cette maquette bancaire.
+    </p>
+
+  </div>
+
+
+  <div class="feature-grid">
+
+    <div class="feature">
+      <span class="feature-number">01</span>
+      <h3>Tableau de bord</h3>
+      <p>
+        Consultez un solde fictif et visualisez
+        vos opérations de démonstration.
+      </p>
+    </div>
+
+    <div class="feature">
+      <span class="feature-number">02</span>
+      <h3>Transferts simulés</h3>
+      <p>
+        Testez une expérience de transfert
+        sans aucun mouvement d'argent réel.
+      </p>
+    </div>
+
+    <div class="feature">
+      <span class="feature-number">03</span>
+      <h3>Carte virtuelle</h3>
+      <p>
+        Découvrez une carte entièrement fictive
+        avec un design premium.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+  Votre Banque — Prototype fictif à but démonstratif.
+</footer>
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div id="dashboard" class="dashboard">
+
+  <div class="dashboard-top">
+
+    <div class="logo">
+      Votre<span>Banque</span>
+      <small>ESPACE DÉMO</small>
+    </div>
+
+    <button class="btn logout" onclick="logout()">
+      Déconnexion
+    </button>
+
+  </div>
+
+
+  <main class="dashboard-main">
+
+    <div class="welcome">
+      <h2>Bonjour, <span id="userName">Client</span> 👋</h2>
+      <p>Bienvenue dans votre espace de démonstration.</p>
+    </div>
+
+
+    <div class="balance">
+
+      <span class="demo-label">
+        SOLDE FICTIF
+      </span>
+
+      <h2 id="balance">
+        12 480,00 €
+      </h2>
+
+      <p style="color:#8e9aaa;font-size:12px;">
+        Aucun argent réel n'est associé à ce solde.
+      </p>
+
+    </div>
+
+
+    <div class="quick-actions">
+
+      <button class="quick" onclick="simulateTransfer()">
+        💸
+        <strong>Envoyer</strong>
+      </button>
+
+      <button class="quick" onclick="receiveMoney()">
+        ↓
+        <strong>Recevoir</strong>
+      </button>
+
+      <button class="quick" onclick="showCard()">
+        💳
+        <strong>Ma carte</strong>
+      </button>
+
+      <button class="quick" onclick="showProfile()">
+        👤
+        <strong>Profil</strong>
+      </button>
+
+    </div>
+
+
+    <div class="transactions">
+
+      <h3>Dernières opérations fictives</h3>
+
+      <div class="transaction">
+
+        <div class="transaction-name">
+
+          <div class="transaction-icon">
+            ↑
+          </div>
+
+          <div>
+            <strong>Versement démo</strong>
+            <small style="display:block;color:#778293;">
+              Aujourd'hui
+            </small>
+          </div>
+
+        </div>
+
+        <strong class="plus">
+          + 1 500 €
+        </strong>
+
+      </div>
+
+
+      <div class="transaction">
+
+        <div class="transaction-name">
+
+          <div class="transaction-icon">
+            ↓
+          </div>
+
+          <div>
+            <strong>Commerce démo</strong>
+            <small style="display:block;color:#778293;">
+              Hier
+            </small>
+          </div>
+
+        </div>
+
+        <strong class="minus">
+          - 85 €
+        </strong>
+
+      </div>
+
+
+      <div class="transaction">
+
+        <div class="transaction-name">
+
+          <div class="transaction-icon">
+            ↑
+          </div>
+
+          <div>
+            <strong>Transfert démo</strong>
+            <small style="display:block;color:#778293;">
+              22 septembre
+            </small>
+          </div>
+
+        </div>
+
+        <strong class="plus">
+          + 320 €
+        </strong>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+
+<!-- MODAL CONNEXION -->
+
+<div class="modal" id="loginModal">
+
+  <div class="modal-box">
+
+    <div class="modal-head">
+
+      <h2>Connexion</h2>
+
+      <button class="close"
+        onclick="closeModal('loginModal')">
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        E-MAIL DE DÉMONSTRATION
+      </label>
+
+      <input
+        id="loginEmail"
+        type="email"
+        placeholder="exemple@demo.com">
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        MOT DE PASSE DE DÉMONSTRATION
+      </label>
+
+      <input
+        type="password"
+        placeholder="••••••••">
+
+    </div>
+
+
+    <button
+      class="btn btn-gold full"
+      onclick="login()">
+
+      Se connecter
+
+    </button>
+
+
+    <p class="notice">
+      Ceci est uniquement une connexion de démonstration.
+      Aucun compte bancaire réel n'est connecté.
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- MODAL INSCRIPTION -->
+
+<div class="modal" id="signupModal">
+
+  <div class="modal-box">
+
+    <div class="modal-head">
+
+      <h2>Créer un compte démo</h2>
+
+      <button class="close"
+        onclick="closeModal('signupModal')">
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="field">
+
+      <label>PRÉNOM</label>
+
+      <input
+        id="firstName"
+        type="text"
+        placeholder="Votre prénom">
+
+    </div>
+
+
+    <div class="field">
+
+      <label>NOM</label>
+
+      <input
+        type="text"
+        placeholder="Votre nom">
+
+    </div>
+
+
+    <div class="field">
+
+      <label>E-MAIL DE DÉMONSTRATION</label>
+
+      <input
+        type="email"
+        placeholder="exemple@demo.com">
+
+    </div>
+
+
+    <div class="field">
+
+      <label>TÉLÉPHONE DE DÉMONSTRATION</label>
+
+      <input
+        type="text"
+        placeholder="+000 00 00 00 00">
+
+    </div>
+
+
+    <div class="field">
+
+      <label>MOT DE PASSE</label>
+
+      <input
+        type="password"
+        placeholder="Créer un mot de passe">
+
+    </div>
+
+
+    <p class="notice">
+      Les informations saisies servent uniquement à cette
+      démonstration. Ne saisissez jamais vos véritables
+      identifiants bancaires, numéro de carte, CVV ou code PIN.
+    </p>
+
+
+    <button
+      class="btn btn-gold full"
+      onclick="createAccount()">
+
+      Créer mon compte démo
+
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function openModal(id){
+  document.getElementById(id).classList.add("show");
+}
+
+function closeModal(id){
+  document.getElementById(id).classList.remove("show");
+}
+
+
+function createAccount(){
+
+  const name =
+    document.getElementById("firstName").value.trim();
+
+  if(!name){
+
+    alert("Veuillez entrer un prénom de démonstration.");
+
+    return;
+  }
+
+  document.getElementById("userName").textContent = name;
+
+  closeModal("signupModal");
+
+  document.getElementById("homePage").style.display="none";
+
+  document.getElementById("dashboard").classList.add("active");
+
+}
+
+
+function login(){
+
+  const email =
+    document.getElementById("loginEmail").value.trim();
+
+  if(!email){
+
+    alert("Veuillez entrer un e-mail de démonstration.");
+
+    return;
+  }
+
+  document.getElementById("userName").textContent="Client";
+
+  closeModal("loginModal");
+
+  document.getElementById("homePage").style.display="none";
+
+  document.getElementById("dashboard").classList.add("active");
+
+}
+
+
+function logout(){
+
+  document.getElementById("dashboard").classList.remove("active");
+
+  document.getElementById("homePage").style.display="block";
+
+}
+
+
+function simulateTransfer(){
+
+  alert(
+    "TRANSFERT SIMULÉ\n\n" +
+    "Cette opération est fictive.\n" +
+    "Aucun argent réel n'a été transféré."
+  );
+
+}
+
+
+function receiveMoney(){
+
+  alert(
+    "RÉCEPTION SIMULÉE\n\n" +
+    "Identifiant fictif : DEMO-000000\n\n" +
+    "Aucun paiement réel ne peut être reçu."
+  );
+
+}
+
+
+function showCard(){
+
+  alert(
+    "CARTE VIRTUELLE DE DÉMONSTRATION\n\n" +
+    "•••• •••• •••• 0000\n\n" +
+    "Cette carte est fictive et inutilisable."
+  );
+
+}
+
+
+function showProfile(){
+
+  alert(
+    "PROFIL DE DÉMONSTRATION\n\n" +
+    "Compte fictif\n" +
+    "Statut : Démonstration"
+  );
+
+}
+
+
+window.onclick=function(event){
+
+  if(event.target.classList.contains("modal")){
+
+    event.target.classList.remove("show");
+
+  }
+
+};
+
+</script>
+
+</body>
+</html>
